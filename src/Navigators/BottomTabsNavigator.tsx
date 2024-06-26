@@ -3,46 +3,33 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 
 //BottomTabs
-import { Biblioteca } from '../screens/Biblioteca'
-import { Actualizacion } from '../screens/Actualizacion'
-import { Historial } from '../screens/Historial'
+import { Library } from '../screens/Library'
+import { WelcomeScreen } from '../screens/WelcomeScreen'
 import { Explorar } from '../screens/Explorar'
-import { Mas } from '../screens/Mas'
+
 
 
 const Tab = createBottomTabNavigator();
 
 export function BottomTabsNavigator() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Biblioteca" component={Biblioteca} options={{
-        tabBarLabel: "Biblioteca",
+    <Tab.Navigator initialRouteName='Bienvenida'>
+      <Tab.Screen name="NeoWs" component={Library} options={{
+        tabBarLabel: "NeoWs",
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name='bookmark-box-multiple' color={color} size={size} />
         )
       }} />
-      <Tab.Screen name="Actualizacion" component={Actualizacion} options={{
-        tabBarLabel: "Actualizacion",
+      <Tab.Screen name="Bienvenida" component={WelcomeScreen} options={{
+        tabBarLabel: "Bienvenida",
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name='book-alert' color={color} size={size} />
+          <MaterialCommunityIcons name='hand-wave' color={color} size={size} />
         )
       }} />
-      <Tab.Screen name="Historial" component={Historial} options={{
-        tabBarLabel: "Historial",
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name='history' color={color} size={size} />
-        )
-      }} />
-      <Tab.Screen name="Explorar" component={Explorar} options={{
-        tabBarLabel: "Explorar",
+      <Tab.Screen name="Epic Photos" component={Explorar} options={{
+        tabBarLabel: "Epic Photos",
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name='web' color={color} size={size} />
-        )
-      }} />
-      <Tab.Screen name="Mas" component={Mas} options={{
-        tabBarLabel: "Explorar",
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name='dots-horizontal' color={color} size={size} />
         )
       }} />
     </Tab.Navigator>
